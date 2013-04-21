@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE vbox SYSTEM "chrome://lock/locale/options.dtd"> 
+
+<window
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    width="1"
+    height="1"
+    onload="window.close();">   <!-- Close window if it gets opened directly for some reason -->
+    <setting type="control" title="&passwordBtn;">
+    <button id="change-password" label="&passwordBtn;" />
+    </setting> 
+</window>
