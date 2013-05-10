@@ -39,7 +39,7 @@ function loadIntoWindow(window) {
 
   if (isNativeUI()) {
     mWindow = window;
-    let iconUrl = gAddonData.resourceURI.spec + "image.png";
+    let iconUrl = gAddonData.resourceURI.spec + "icon.png";
     lockBtn = window.NativeWindow.menu.add("Lock", iconUrl, function() { lock(window); });
   }
 }
