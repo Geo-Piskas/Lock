@@ -1,3 +1,4 @@
 // automatically prefixed file!
 
-pref("extensions.lock.password", "");
+pref("extensions.fennec-lock.passphrase", "");
+pref("extensions.fennec-lock.salt", "");
