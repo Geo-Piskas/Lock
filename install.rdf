@@ -5,7 +5,7 @@
         <em:id>lock@geopiskas.com</em:id>
         <em:type>2</em:type>
         <em:name>Lock</em:name>
-        <em:version>1.3</em:version>
+        <em:version>1.4</em:version>
         <em:bootstrap>true</em:bootstrap>
         <em:description>Permission to browse!</em:description>
         <em:creator>Geo Piskas</em:creator>
