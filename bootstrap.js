@@ -20,11 +20,13 @@ function isNativeUI() {
   return (appInfo.ID == "{aa3c5121-dab2-40e2-81ca-7ea25febc110}");
 }
 
-function lock(window) {
+function lock(window, startup) {
   var salt = prefs.getCharPref("salt");
   var passphrase = prefs.getCharPref("passphrase");
   
-  window.BrowserApp.addTab("about:blank"); 
+  if(startup!=true) {
+    window.BrowserApp.addTab("about:blank"); 
+  }
   var password = {value: ""};
   var check = {value: true};
   var result;
@@ -33,9 +35,12 @@ function lock(window) {
     password = {value: ""};
     result = prompts.promptPassword(null, "Firefox is locked!", "Enter passphrase...", password, null, check);
   } while( CryptoJSWrapper.CryptoJS.SHA3(password.value+salt) != passphrase || result==false );
-  
-  window.BrowserApp.closeTab(window.BrowserApp.selectedTab);
-  window.NativeWindow.toast.show("Firefox Unlocked!", "short"); 
+
+  if(startup!=true) {
+    window.BrowserApp.closeTab(window.BrowserApp.selectedTab);
+  }
+
+  window.NativeWindow.toast.show("Firefox Unlocked!", "short");
 }
 
 function loadIntoWindow(window) {
@@ -45,7 +50,8 @@ function loadIntoWindow(window) {
   if (isNativeUI()) {
     mWindow = window;
     let iconUrl = gAddonData.resourceURI.spec + "icon.png";
-    lockBtn = window.NativeWindow.menu.add("Lock", iconUrl, function() { lock(window); });
+    lockBtn = window.NativeWindow.menu.add("Lock", iconUrl, function() { lock(window, false); });
+    lock(window, true);
   }
 }
 
