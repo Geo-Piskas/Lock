@@ -5,4 +5,4 @@ A Firefox for Android extension. <br> https://addons.mozilla.org/en-US/android/a
 
 Permission to browse! Lock Firefox to avoid unwanted browsing by others.
 
-Lock <br> Copyright (C) 2013  George Piskas
+Lock <br> Copyright (C) 2013  George Piskas 
